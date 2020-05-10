@@ -3,33 +3,22 @@ help:
 	@echo "lint - check the code"
 	@echo "serve - run the front-end locally"
 	@echo "build - package front-end software"
-	@echo "init - configure the back-end"
-	@echo "status - check update of the back-end"
-	@echo "push - update back-end resources"
 	@echo "remove-from-git - example: PATH_TO_REMOVE=yarn.lock make remove-from-git"
 
 install:
 	npm install
 
 lint:
-	npm lint
+	npm run lint
 
 serve:
-	npm serve
+	npm run serve
 
 build:
-	npm build
+	npm run build
 
-init:
-	amplify init
-	amplify add auth
-	amplify add api
-
-status:
-	amplify status
-
-push:
-	amplify push
+tracked-in-git:
+	git log --pretty=format: --name-only | sort - -u
 
 remove-from-git:
 	@[ ! -z "${PATH_TO_REMOVE}" ] || (echo "You should set PATH_TO_REMOVE. For example: PATH_TO_REMOVE=yarn.lock make remove-from-git"; exit 1)
