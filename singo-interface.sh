@@ -1,2 +1,2 @@
 cd /root/singo-interface
-make serve
+npm run serve-demo 
