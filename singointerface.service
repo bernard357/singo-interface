@@ -1,0 +1,10 @@
+[Unit]
+Description=Singo Interface demo server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /root/singo-interface/singo-interface.sh
+
+[Install]
+WantedBy=multi-user.target
