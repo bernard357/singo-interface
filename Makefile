@@ -17,6 +17,12 @@ serve:
 build:
 	npm run build
 
+image:
+	docker build -t singo-interface:v1 .
+
+container:
+	docker run -d -p 8080:8080 --rm --name singo-interface singo-interface:v1
+
 tracked-in-git:
 	git log --pretty=format: --name-only | sort - -u
 
